@@ -6,17 +6,18 @@
   </head>
   <body>
       
-        <?php /*
-          $cents = 1112;
-          $dollars = substr($cents, 0, 1);
-          $dimes = substr($cents, 1, 1);
-          $pennies = substr($cents, 2, 1);
-          
-          echo "$dollars <br> \n";
-          echo "$dimes <br> \n";   
-          echo "$pennies <br> \n"
-          */ 
-        ?>
+      <?php
+      
+      $cents = 159;
+      $dollars = (($cents / 100) - (($cents % 100)/100));
+      echo $dollars;
+      echo "<br>";
+      $quarters = (($cents % 100) / 25) - (($cents % 25) / 25);
+      echo $quarters;
+      echo "<br";
+      echo "Hello?";
+      
+      ?>
       
     <div>
       <p>
