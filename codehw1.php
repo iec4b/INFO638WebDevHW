@@ -8,15 +8,38 @@
       
       <?php
       
-      $cents = 159;
+      $cents = 1235650;
+      echo "$cents cents";
+      echo "<br>";
       $dollars = (($cents / 100) - (($cents % 100)/100));
-      echo $dollars;
+       if ($dollars < 1) {
+          $dollars = 0; 
+      }
+      echo "$dollars dollars";
       echo "<br>";
       $quarters = (($cents % 100) / 25) - (($cents % 25) / 25);
-      echo $quarters;
-      echo "<br";
-      echo "Hello?";
+       if ($quarters < 1) {
+          $quarters = 0;
+      }
       
+      echo "$quarters quarters";
+      echo "<br>";
+      $dimes = ((($cents - $dollars * 100 - $quarters * 25) / 10) - (($cents % 10) / 10));
+      if ($dimes < 1) {
+          $dimes = 0;
+      }
+      
+      echo "$dimes dimes";
+      echo "<br>";
+      $nickels = ((($cents - $dollars * 100 - $quarters * 25 - $dimes * 10) / 5) - (($cents % 5) / 5)) ;
+       if ($nickels < 1) {
+          $nickels = 0;
+      }
+      
+      echo "$nickels nickels";
+      echo "<br>";
+      $pennies = $cents - $dollars * 100 - $quarters * 25 - $dimes * 10 - $nickels * 5;
+      echo "$pennies pennies";
       ?>
       
     <div>
