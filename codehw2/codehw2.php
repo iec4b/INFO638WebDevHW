@@ -68,22 +68,22 @@
         $toss = mt_rand(0,1);
         ++$counter;
         if ($toss == 0) {
-          echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
+          echo '<img src="dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
           $last = 0;
           continue;  
         }
         if ($toss == 1) {
-          echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
+          echo '<img src="dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
           $last = 1;
           while ($last == 1) {
             $toss = mt_rand(0,1);
             if ($toss == 0) {
-              echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
+              echo '<img src="dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
               ++$counter;
               break 1;
             }
             if ($toss == 1) {
-              echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
+              echo '<img src="dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
               ++$counter;
               break 2;
             }
