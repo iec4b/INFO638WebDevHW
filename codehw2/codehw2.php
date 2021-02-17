@@ -19,23 +19,27 @@
 
         echo "<h2>1. Challenge: ISBN Validation</h2>";
 
-        $isbn = "0553373731"; //set the isbn
+        $isbn = "123456789";
+        echo isbn_validator($isbn);
+        echo isbn_validator("123456789x");
+        echo isbn_validator(123);
+        echo isbn_validator(1491978910);
         
-        function isbn_test($isbn) {
-          if (strlen($isbn) != 10) {
+        function isbn_test($n) {//a function that tests the validity of an isbn
+          if (strlen($n) != 10) {
             return FALSE;
           } // tests whether the $isbn actually has the prereqeuisite 10 characters
 
-          $isbnArray = array('first' => $isbn[0],
-                          'second' => $isbn[1],
-                          'third' => $isbn[2],
-                          'fourth' => $isbn[3],
-                          'fifth' => $isbn[4],
-                          'sixth' => $isbn[5],
-                          'seventh' => $isbn[6],
-                          'eighth' => $isbn[7],
-                          'ninth' => $isbn[8],
-                          'tenth' => $isbn[9]); //converts isbn to associative array so it can more easiily be handled digit by digit
+          $isbnArray = array('first' => $n[0],
+                          'second' => $n[1],
+                          'third' => $n[2],
+                          'fourth' => $n[3],
+                          'fifth' => $n[4],
+                          'sixth' => $n[5],
+                          'seventh' => $n[6],
+                          'eighth' => $n[7],
+                          'ninth' => $n[8],
+                          'tenth' => $n[9]); //converts isbn to associative array so it can more easiily be handled digit by digit
 
           if ($isbnArray['tenth'] == "X" or $isbnArray['tenth'] == "x") {
           $isbnArray['tenth'] = 10;
@@ -49,14 +53,22 @@
           else return FALSE; //returns FALSE if the arithmetic doesn't check out
         }
 
-        if (isbn_test($isbn) == TRUE) {
-          echo "<p class=\"valid\">Testing ISBN $isbn which is valid!<br>";
-          echo "To find out more about the book with this ISBN, follow this <a href=http://www.isbnsearch.org/isbn/$isbn>link</a></p><br>"; // prints valid result to browser, along with link to book by that isbn
+        function isbn_validator($n){// a function that delivers the result of isbn_test function in a human-readable form
+            if (isbn_test($n) == TRUE) {
+            return "<p class=\"valid\">Testing ISBN $n which is valid!<br>To find out more about the book with this ISBN, follow this <a href=http://www.isbnsearch.org/isbn/$n>link</a></p><br>"; // prints valid result to browser, along with link to book by that isbn
+          }
+
+          if (isbn_test($n) == FALSE) {
+            return "<p class=\"invalid\">Testing ISBN $n which is not valid!</p><br>"; //prints invalid result to browser
+          }
         }
 
-        if (isbn_test($isbn) == FALSE) {
-          echo "<p class=\"invalid\">Testing ISBN $isbn which is not valid!</p><br>"; //prints invalid result to browser
-        }
+
+
+        
+      
+        
+
 
       /*Challenge 2*/
 
