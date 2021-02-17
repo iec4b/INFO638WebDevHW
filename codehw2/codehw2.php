@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Code Homework #1</title>
+    <link rel="stylesheet"
+      href="style.css" />
   </head>
   <body>
     <div>
@@ -17,7 +19,7 @@
 
         echo "<h2>1. Challenge: ISBN Validation</h2>";
 
-        $isbn = "0553373730"; //set the isbn
+        $isbn = "0553373731"; //set the isbn
         
         function isbn_test($isbn) {
           if (strlen($isbn) != 10) {
@@ -48,12 +50,12 @@
         }
 
         if (isbn_test($isbn) == TRUE) {
-          echo "<p>Testing ISBN $isbn which is valid!<br>";
+          echo "<p class=\"valid\">Testing ISBN $isbn which is valid!<br>";
           echo "To find out more about the book with this ISBN, follow this <a href=http://www.isbnsearch.org/isbn/$isbn>link</a></p><br>"; // prints valid result to browser, along with link to book by that isbn
         }
 
         if (isbn_test($isbn) == FALSE) {
-          echo "<p>Testing ISBN $isbn which is not valid!</p><br>"; //prints invalid result to browser
+          echo "<p class=\"invalid\">Testing ISBN $isbn which is not valid!</p><br>"; //prints invalid result to browser
         }
 
       /*Challenge 2*/
@@ -68,22 +70,22 @@
         $toss = mt_rand(0,1);
         ++$counter;
         if ($toss == 0) {
-          echo '<img src="dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
+          echo '<img class="coinTails" src="dime-tails.jpg"  title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
           $last = 0;
           continue;  
         }
         if ($toss == 1) {
-          echo '<img src="dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
+          echo '<img class="coinHeads" src="dime-heads.jpg" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
           $last = 1;
           while ($last == 1) {
             $toss = mt_rand(0,1);
             if ($toss == 0) {
-              echo '<img src="dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
+              echo '<img class="coinTails" src="dime-tails.jpg"  title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
               ++$counter;
               break 1;
             }
             if ($toss == 1) {
-              echo '<img src="dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
+              echo '<img class="coinHeads" src="dime-heads.jpg"  title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
               ++$counter;
               break 2;
             }

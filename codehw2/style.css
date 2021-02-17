@@ -1,0 +1,29 @@
+.invalid {
+  color: red;
+}
+
+.valid {
+  color: green;
+}
+
+.coinHeads {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  border: 3px solid black;
+  margin: 2px;
+  border-radius: 100%;
+  background-color: rgb(129, 41, 41);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.500); 
+}
+
+.coinTails {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  border: 3px dashed black;
+  margin: 2px;
+  border-radius: 100%;
+  background-color: darkgreen;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.500);
+}
