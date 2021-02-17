@@ -55,22 +55,22 @@ while ($toss >= 0) {
   $toss = mt_rand(0,1);
   ++$counter;
   if ($toss == 0) {
-    echo "tails<br>";
+    echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tails-Up" alt="Dime Tails-Up" /><br>';
     $last = 0;
     continue;  
   }
   if ($toss == 1) {
-    echo "heads<br>";
+    echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Heads-Up" alt="Dime Heads-Up" /><br>';
     $last = 1;
     while ($last == 1) {
       $toss = mt_rand(0,1);
       if ($toss == 0) {
-        echo "tails<br>";
+        echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tails-Up" alt="Dime Tails-Up" /><br>';
         ++$counter;
         break 1;
       }
       if ($toss == 1) {
-        echo "heads<br>";
+        echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Heads-Up" alt="Dime Heads-Up" /><br>';
         ++$counter;
         break 2;
       }
@@ -78,12 +78,6 @@ while ($toss >= 0) {
   }
 }
 
-
-
-    
-
-
 echo "number of tosses: " . ($counter) . "<br>";
-echo "last: " . $last . "<br>";
-echo "toss: " . $toss . "<br>";
+
 ?>
