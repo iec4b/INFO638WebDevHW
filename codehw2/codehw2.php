@@ -55,22 +55,22 @@ while ($toss >= 0) {
   $toss = mt_rand(0,1);
   ++$counter;
   if ($toss == 0) {
-    echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tails-Up" alt="Dime Tails-Up" /><br>';
+    echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
     $last = 0;
     continue;  
   }
   if ($toss == 1) {
-    echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Heads-Up" alt="Dime Heads-Up" /><br>';
+    echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
     $last = 1;
     while ($last == 1) {
       $toss = mt_rand(0,1);
       if ($toss == 0) {
-        echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tails-Up" alt="Dime Tails-Up" /><br>';
+        echo '<img src="/INFO638WebDevHW/codehw2/dime-tails.jpg" width="60" height="60" title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
         ++$counter;
         break 1;
       }
       if ($toss == 1) {
-        echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Heads-Up" alt="Dime Heads-Up" /><br>';
+        echo '<img src="/INFO638WebDevHW/codehw2/dime-heads.jpg" width="60" height="60" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
         ++$counter;
         break 2;
       }
@@ -79,5 +79,6 @@ while ($toss >= 0) {
 }
 
 echo "number of tosses: " . ($counter) . "<br>";
-
+echo '"Dime Head (Front)" by matthiasxc is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/ <br>';
+echo '"Dime Tail (Back)" by matthiasxc is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/<br>';
 ?>
