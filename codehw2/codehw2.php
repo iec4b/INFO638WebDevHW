@@ -74,29 +74,31 @@
 
       echo "<br><h2>2. Challenge: Coin Toss</h2><br>";
 
+      //establishing variables
       $counter = 0;
       $toss = 0;
       $last = 0;
 
-      while ($toss >= 0) {
+      /*The ultimate goal is to flip a coin repeatedly until it comes up heads twice in a row. This loop will keep "tossing a coin" or in other words running mt_rand(0,1) to yield a random 1 (heads) or 0 (tails) result, which becomes the value of $toss. If it comes up tails, it just starts over. If it comes up heads, it branches off into another loop that tries for another heads. If the second loop comes up heads, the whole thing stops. If, however, it comes up tails, it goes back to the very start of the loop. The $last variable "saves" the most recent result, and is the trigger for branching off into the second loop or returning to the original loop. In other words, if the last flip came up heads, $last will be set to 1 and the loop will branch off into a "while ($last==1)" loop, or put another way, a "while (last toss came up heads)" loop. The $counter simply keeps track of how many tosses have been made. */
+      while ($toss >= 0) {//starting loop
         $toss = mt_rand(0,1);
         ++$counter;
-        if ($toss == 0) {
+        if ($toss == 0) {//if the coin comes up tails, it sets the last result to tails and just starts over
           echo '<img class="coinTails" src="dime-tails.jpg"  title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
           $last = 0;
           continue;  
         }
-        if ($toss == 1) {
+        if ($toss == 1) {//if the coin comes up heads, it sets the last result to heads and branches off
           echo '<img class="coinHeads" src="dime-heads.jpg" title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
           $last = 1;
-          while ($last == 1) {
+          while ($last == 1) {//this loop is like the first loop, except if it comes up heads it breaks out of the main loop
             $toss = mt_rand(0,1);
-            if ($toss == 0) {
+            if ($toss == 0) {//this means there was a tails right after a heads, so go back to the main loop, i.e. keep flipping the coin
               echo '<img class="coinTails" src="dime-tails.jpg"  title="Dime Tail (Back)" alt="Dime Tail (Back)" /><br>';
               ++$counter;
               break 1;
             }
-            if ($toss == 1) {
+            if ($toss == 1) {//this means there was a heads AND the last toss was heads, so it's time to break out of the sub AND the main loop, i.e. stop flipping entirely.
               echo '<img class="coinHeads" src="dime-heads.jpg"  title="Dime Head (Front)" alt="Dime Head (Front)" /><br>';
               ++$counter;
               break 2;
@@ -105,13 +107,14 @@
         }
       }
 
-      echo "number of tosses: " . ($counter) . "<br>";
+      echo "number of tosses: " . ($counter) . "<br>";//shows how many flips were made
       ?>
     </div>
     <div>
+      <!-- attribution for the images -->
       <p>"Dime Head (Front)" by matthiasxc is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/
       <br>
-      "Dime Tail (Back)" by matthiasxc is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/</p>
+      "Dime Tail (Back)" by matthiasxc is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/</p> 
       <br>
     </div>
     <footer>
