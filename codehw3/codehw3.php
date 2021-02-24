@@ -129,7 +129,7 @@
             } else//if the flip result is heads...
               ++$heads;//add one to the heads tracker
               ++$tally;//add one to the overall tally of flips
-              echo '<img class="coinHeads" src="dime-heads.jpg" title="Dime Head (Front)" alt="Dime Head (Front)" />';//show the coin tails-up
+              echo '<img class="coinHeads" src="dime-heads.jpg" title="Dime Head (Front)" alt="Dime Head (Front)" />';//show the coin heads-up
             if ($heads == ($n - 1)) {
               ++$close;//just for fun, this tracks the total number of times you were one away from hitting the streak 
             }
