@@ -27,3 +27,47 @@
   background-color: darkgreen;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.500);
 }
+
+caption {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: 20%;
+  margin-top: 20px;
+  margin-right: 20%;
+  margin-bottom: auto;
+  box-shadow: 5px 5px darkblue;
+}
+
+th {
+  text-align: center;
+  font-size: 14pt;
+  background-color: gray;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+#total {
+  color: white;
+  background: darkblue;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 20px;
+  text-align: right;
+  box-shadow: 5px 5px gray; 
+  
+}

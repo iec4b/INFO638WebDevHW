@@ -85,14 +85,14 @@
                     <td>" . $item['authorLast'] . "</td>
                     <td>" . $item['pages'] . "</td>
                     <td>" . $item['type'] . "</td>
-                    <td>" . $item['price'] . "</td>
+                    <td>$" . $item['price'] . "</td>
                   </tr>";
             
           }
         echo '</tbody>
               </table>';
         $totalPrice = (array_sum(array_column($bookLists, 'price')));//This runs the array_sum function on all columns within the array by the key 'price'. I came to this solution by consulting the PHP manual and googling how to do sum functions for multidimensional arrays, which pointed me to a stack overflow solution proposed by Blablaenzo: https://stackoverflow.com/questions/12838729/multidimensional-array-array-sum
-        echo "<p>Your total price is: $totalPrice</p>";
+        echo '<p id="total">Your total price is: $' . $totalPrice . '</p>';
 
         
 
